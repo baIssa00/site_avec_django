@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'contact',
+    'comptes',
 ]
 
 MIDDLEWARE = [
@@ -53,12 +54,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'baysim.urls'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'static')
         ],
         'APP_DIRS': True,
         'OPTIONS': {

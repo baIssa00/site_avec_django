@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+
+<div class="row">
+    <div class="cold-md m-auto">
+        <div class="card card-body ">
+            {% if contacts %}
+                <table class="table">              
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Details</th>
+                        </tr>
+                    </thead>
+                    {% for contact in contacts %}  
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{ contact.id }}</th>
+                            <td>{{ contact.prenom }}</td>
+                            <td>{{ contact.nom }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>
+                                <a href="{% url 'contact_details' contact.id %}"><span class="glyphicon glyphicon-edit">Details</span></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        </div>
+      </div>
+</div>
+
+{% endblock contenu %}

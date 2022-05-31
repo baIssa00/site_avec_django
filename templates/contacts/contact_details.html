@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+
+<div class="row">
+    <div class="cold-md m-auto">
+        <div class="card card-body ">
+            {% if contact %}
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Date d'inscription</th>
+                    <th scope="col">Auteur</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{ contact.id }}</th>
+                    <td>{{ contact.prenom }}</td>
+                    <td>{{ contact.nom }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.numero }}</td>
+                    <td>{{ contact.pub_date }}</td>
+                    <td>{{ contact.auteur }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            
+            {% endif %}
+        </div>
+      </div>
+</div>
+
+{% endblock contenu %}
