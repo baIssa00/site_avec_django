@@ -1,38 +1,43 @@
 {% extends "base.html" %}
 
 {% block contenu %}
-
-<div class="row">
-    <div class="cold-md m-auto">
-        <div class="card card-body ">
-            {% if contacts %}
-                <table class="table">              
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Prenom</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Details</th>
-                        </tr>
-                    </thead>
-                    {% for contact in contacts %}  
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{ contact.id }}</th>
-                            <td>{{ contact.prenom }}</td>
-                            <td>{{ contact.nom }}</td>
-                            <td>{{ contact.email }}</td>
-                            <td>
-                                <a href="{% url 'contact_details' contact.id %}"><span class="glyphicon glyphicon-edit">Details</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    {% endfor %}
-                </table>
-            {% endif %}
+<div class="container">
+    <a class="mt-3 mb-2 btn btn-primary" href="{% url 'new_contact' %}">Ajouter un contact</a>
+    <div class="row mb-2">
+        <div class="cold-md m-auto">
+            <div class="card card-body ">
+                {% if contacts %}
+                    <table class="table">              
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Prenom</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        {% for contact in contacts %}  
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{ contact.id }}</th>
+                                <td>{{ contact.prenom }}</td>
+                                <td>{{ contact.nom }}</td>
+                                <td>{{ contact.email }}</td>
+                                <td>
+                                    <a href="{% url 'contact_details' contact.id %}"><span class="glyphicon glyphicon-edit">Details</span></a>
+                                    <a href="{% url 'edit_contact' contact.id %}"><span class="glyphicon glyphicon-edit">Modier</span></a>
+                                    <a href="{% url 'delete_contact' contact.id %}"><span class="glyphicon glyphicon-edit">Supprimer</span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <h3>Contact Vide</h3>
+                {% endif %}
+            </div>
         </div>
-      </div>
+    </div>
 </div>
-
 {% endblock contenu %}

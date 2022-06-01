@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+
+<div class="row mt-2">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            {% if contact %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="alert alert-danger" role="alert">
+                    Etes-vous sur de vouloir supprimé : {{ contact }}!
+                  </div>
+              <button class="btn btn-danger" type="submit">OUI</button>
+              <a class="btn btn-danger" href="{% url 'contact_list' %}" type="submit">NON</a>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock contenu %}

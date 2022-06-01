@@ -8,6 +8,7 @@ class Contact(models.Model):
     email = models.EmailField (max_length=200)
     pub_date = models.DateTimeField('date published')
     auteur = models.ForeignKey(User, on_delete=models.CASCADE)
+    archive = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return f"{self.prenom} {self.nom}"

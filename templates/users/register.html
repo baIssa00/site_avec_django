@@ -45,19 +45,27 @@
 <main class="form-signin">
     <form method="POST">
         {% csrf_token %}
-      <h1 class="h3 mb-3 fw-normal">Connectez-vous s'il vous plait !</h1>
-  
-      <div class="form-floating">
-        <input type="text" class="form-control" id="username" name="username" placeholder="name@example.com">
+      <h1 class="h3 mb-3 fw-normal">Inscrire un utilisateur</h1>
+      <div class="form-floating mt-2">
+        <input type="text" class="form-control" id="username" name="username" placeholder="name">
         <label for="username">Nom d'utilisateur</label>
       </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="password" name="password" placeholder="*********">
-        <label for="password">Mot de passe</label>
+      <div class="form-floating mt-2">
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        <label for="email">Email</label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Se connecter</button>
+      
+      <div class="form-floating mt-2">
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="*********">
+        <label for="password1">Mot de passe</label>
+      </div>
+      <div class="form-floating mt-2">
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="*********">
+        <label for="password2">Confirmation de mot de passe</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">S'inscrire</button>
     </form>
-    <p class="mt-2 mb-3 text-muted">Vous n'avez pas de compte ? <a href="{% url 'register' %}">S'inscrire</a> </p>
+    <p class="mt-2 mb-3 text-muted">Vous avez un compte ? <a href="{% url 'login' %}">Se Connecter</a> </p>
   </main>
   
 {% endblock contenu %}
