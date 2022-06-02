@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 
 class Album(models.Model):
-    link = models.CharField(max_length=250)
     title = models.CharField(max_length=250)
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     auteur = models.ForeignKey(User, on_delete=models.CASCADE)
+    link = models.ImageField(upload_to='media/', null=True, blank=True)
 
     def __str__(self) -> str:
         return f"titre : {self.title}"

@@ -12,8 +12,11 @@ def new_photo(request):
     if request.method == "POST":
         # auteur = request.user
         title = request.POST['title']
-        link = request.POST['link']
+        # link = request.POST['link']
         auteur = request.user
+
+        if len(request.FILES) != 0:
+            link = request.FILES['link']
         photo = Album.objects.create(
             title = title,
             link = link,

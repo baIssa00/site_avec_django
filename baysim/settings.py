@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# ALLOWED_HOSTS = ['github.com/baIssa00']
 # Application definition
 
 INSTALLED_APPS = [
@@ -139,12 +139,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+# Path where media is stored
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_URL = '/images/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -152,3 +156,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # pour le deploiment
 SECURE_HSTS_SECONDS = 31536000
+
+

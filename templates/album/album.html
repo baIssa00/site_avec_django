@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block contenu %}
 <main>
     <section class="py-5 text-center container">
@@ -24,7 +24,7 @@
                 {% for photo in album_photo %}
                 <div class="col"> 
                     <div class="card shadow-sm">
-                        <img src="{{ photo.link }}" width="100%" height="250px">
+                        <img src="../../static/{{ photo.link }}" width="100%" height="250px">
 
                         <div class="card-body">
                         <h5 class="card-text">{{ photo.title }}</h5>
