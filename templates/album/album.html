@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Album</h1>
+                <p class="lead text-muted">De belles images partagées par les utilisateurs du site.</p>
+                <p>
+                {% comment %} <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                <a href="#" class="btn btn-secondary my-2">Secondary action</a> {% endcomment %}
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <a class="mb-3 btn btn-primary" href="{% url 'new_photo' %}">Ajouter une image</a>
+            {% if album_photo %}
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for photo in album_photo %}
+                <div class="col"> 
+                    <div class="card shadow-sm">
+                        <img src="{{ photo.link }}" width="100%" height="250px">
+
+                        <div class="card-body">
+                        <h5 class="card-text">{{ photo.title }}</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                            {% comment %} <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> {% endcomment %}
+                            </div>
+                            <small class="text-muted">Auteur : {{ photo.auteur }}</small>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock contenu %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+
+<div class="row mt-2">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <form method="POST">
+                {% csrf_token %}
+              <h1 class="h3 mb-3 fw-normal">Nouvelle Image</h1>
+
+              <div class="form-floating mt-2">
+                <input type="text" class="form-control" id="title" name="title" placeholder="title">
+                <label for="title">Titre de l'image</label>
+              </div>
+              <div class="form-floating mt-2">
+                <input type="text" class="form-control" id="link" name="link" placeholder="link">
+                <label for="link">Le lien de l'image</label>
+              </div>
+              <button class="w-100 mt-3 btn btn-lg btn-primary" type="submit">Ajouter</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock contenu %}

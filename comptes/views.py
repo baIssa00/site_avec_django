@@ -12,6 +12,10 @@ def login_view(request):
         if user is not None:
             login(request,user)
             return redirect("/contacts/")
+        else:
+            msg = "Nom d'utilisateur ou mot de passe non valide"
+            form = LoginForm(request.POST)
+            return render(request, "users/login.html", {"form":form, "msg":msg})
     return render(request, "users/login.html", {"form":form})
 
 def register_view(request):

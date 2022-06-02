@@ -3,7 +3,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 # Create your views here.
 from django.http import HttpResponse
-import contact
 
 from contact.models import Contact
 from django.contrib.auth.decorators import login_required

@@ -45,7 +45,7 @@
 <main class="form-signin">
     <form method="POST">
         {% csrf_token %}
-      <h1 class="h3 mb-3 fw-normal">Inscrire un utilisateur</h1>
+      <div class="txt-login">Inscription</div>
       <div class="form-floating mt-2">
         <input type="text" class="form-control" id="username" name="username" placeholder="name">
         <label for="username">Nom d'utilisateur</label>
@@ -65,7 +65,7 @@
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">S'inscrire</button>
     </form>
-    <p class="mt-2 mb-3 text-muted">Vous avez un compte ? <a href="{% url 'login' %}">Se Connecter</a> </p>
+    <p class="mt-2 mb-3 text-muted txt-compte">Vous avez un compte ? <a href="{% url 'login' %}">Se Connecter</a> </p>
   </main>
   
 {% endblock contenu %}

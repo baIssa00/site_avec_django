@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'contact',
     'comptes',
+    'album',
 ]
 
 MIDDLEWARE = [
@@ -92,11 +93,15 @@ WSGI_APPLICATION = 'baysim.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo_python',
+        'NAME': 'django',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': '',
+        "OPTIONS": {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+        
     }
 }
 
@@ -144,3 +149,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# pour le deploiment
+SECURE_HSTS_SECONDS = 31536000

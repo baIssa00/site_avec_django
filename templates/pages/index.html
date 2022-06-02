@@ -1,12 +1,90 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block contenu %}
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Gestion Contact</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-</div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/services-bg.jpg' %}" class="bd-placeholder-img" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>BAYSIM <span class="bg-title">GUINÉE</span></h1>
+            <h6>Obtenez <span class="bg-title">le meilleur</span>, dès maintenant !</h6>
+            <p><a class="btn btn-lg btn-primary" href="https://www.baysim-gn.com/">En savoir Plus</a></p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/slider-1.png' %}" class="bd-placeholder-img" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>SOYEZ <span class="bg-title">SATISFAIT</span></h1>
+            <h6>De nos produits et services ainsi que l'efficacité de nos ingénieurs grâce à une expertise accumulée.</h6>
+            <p><a class="btn btn-lg btn-primary" href="https://www.baysim-gn.com/">En savoir Plus</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/partenariat.jpg' %}" class="bd-placeholder-img" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>BATISSONS <span class="bg-title">ENSEMBLE</span></h1>
+            <h6>Une interconnexion fiable, rapide et rentable pour tous grace à notre experience hors paire, et l'assurance d'une collaboration fructieuse</h6>
+            <p><a class="btn btn-lg btn-primary" href="https://www.baysim-gn.com/">En savoir Plus</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="{% static 'images/credit.png' %}" class="bd-services-img" width="140" height="140" aria-label="Placeholder: 140x140">
+
+        <h2>Achat De Cartes et Recharges (UV)</h2>
+        <p>BPurse met à votre disposition une gamme variée de solution vous permettant de vous procurer des produits ou services sous forme...</p>
+        <p><a class="btn btn-secondary" href="https://baysim-gn.com/services.php">Afficher plus de détails &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static 'images/transferer.png' %}" class="bd-services-img" width="140" height="140" aria-label="Placeholder: 140x140">
+
+        <h2>Carte Bancaire</h2>
+        <p>Grâce à la carte BPurse, bénéficiez des services liés à une carte bancaire classique VISA, MASTERCARD, sans avoir les inconvénients d'une banque et bénéficiez d’un réseau d’acceptation supplémentaire de plus...</p>
+        <p><a class="btn btn-secondary" href="https://baysim-gn.com/services.php">Afficher plus de détails &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static 'images/facture.png' %}" class="bd-services-img" width="140" height="140" aria-label="Placeholder: 140x140">
+
+        <h2>Paiement De Facture</h2>
+        <p>Terminé les longues files d'attente notre plateforme vous permet aussi de payer toutes vos factures en toute sécurité et tranquillité sans vous déplacer. Consulter l'historique de vos transactions dans votre espace sur PC ou mobile.</p>
+        <p><a class="btn btn-secondary" href="https://baysim-gn.com/services.php">Afficher plus de détails &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</main>
      
 {% endblock contenu %}

@@ -21,4 +21,6 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('', include('contact.urls')),
     path('', include('comptes.urls')),
+    path('', include('album.urls')),
+    # path('album/', include('album.urls')),
 ]

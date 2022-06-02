@@ -1,3 +1,8 @@
 $(document).ready(function() {
-    console.log('js reussi!')
+    $("#search_user").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 })
